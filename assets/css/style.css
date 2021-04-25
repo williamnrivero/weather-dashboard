@@ -1,38 +1,14 @@
-
-/*   */
-    /* padding: 0px 10px;
-  } */
-
-
-  /* .sidenav {
-      height: 100%; 
-      width: 350px; /* width of the sidebar */
-      /*position: fixed;  Sidebar stays in place on scroll*/
-      /* z-index: 1;
-      top: 0; 
-      left: 0;
-      background-color: aliceblue;  */
-      /*overflow-x: hidden;  Disable horizontal scroll */
-      /* padding-top: 20px;
-    }
-      */
-
-
-  /* The navigation menu links */
-    /* .sidenav a {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-    } */
-
-    .pastCitySearch {
+ .pastCitySearch {
       height: 50px;
       font-size: 20px;
   
-    }
+ }
   
-    .nav {
-      background-color: aliceblue;
-    }
+.nav {
+    background-color: aliceblue;
+
+}
+
+#header {
+  padding-left: 18px;
+}
