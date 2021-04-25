@@ -1,7 +1,7 @@
 // store the value of the input
 let city = $("#searchTerm").val();
 // store api key
-const apiKey = "&appid=afaa8eea1769b4359fd8e07b2efcefbd";
+const apiKey = "&appid=b6a7f5f43a88b25bebcab80bd9ef0e92";
 
 let date = new Date();
 
@@ -131,3 +131,32 @@ function getCurrentForecast () {
   });
 
 }
+
+ //Lat and lon for UV index
+ let lat = response.city.coord.lat;
+ let lon = response.city.coord.lon;
+
+// UV Index API Call
+let uvURL = 'https://api.openweathermap.org/data/2.5/uvi?appid=b6a7f5f43a88b25bebcab80bd9ef0e92&lat=${lat}&lon=${lon}';
+                
+$.ajax({
+    url: uvURL,
+    method: "GET"
+})
+    .then(function(responseUV){
+        console.log(responseUV);
+        $(".uvIndex").text("UV Index: " + responseUV.value);
+
+        //Color changes depending on UV index 
+        if (responseUV.value < 3){
+            $(".uvIndex").attr("class", "uvIndex btn btn-success");
+        }
+        if (responseUV.value > 3 & responseUV.value < 6){
+            $(".uvIndex").attr("class", "uvIndex btn btn-warning");
+        }
+        if (responseUV.value > 6){
+            $(".uvIndex").attr("class", "uvIndex btn btn-danger");
+        }
+    
+});   
+
